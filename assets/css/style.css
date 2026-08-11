@@ -108,14 +108,15 @@ ul {
 
 .site-nav a {
   font-size: 1.05rem;
+  font-weight: 400;
   text-decoration: none;
   color: var(--ink);
-  transition: opacity 0.15s ease;
+  transition: font-weight 0.15s ease;
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  opacity: 0.55;
+  font-weight: 700;
 }
 
 /* ---------------------------------------------------
@@ -181,17 +182,9 @@ ul {
   color: var(--bg);
 }
 
-.social-icon--substack {
-  border: none;
-  width: 34px;
-  height: 34px;
-}
-
-.social-icon--substack:hover,
-.social-icon--substack:focus-visible {
-  background-color: transparent;
-  color: var(--ink-soft);
-  transform: translateY(-2px);
+.social-icon--substack svg {
+  width: 15px;
+  height: 15px;
 }
 
 /* Subtle CSS-only tooltip */
