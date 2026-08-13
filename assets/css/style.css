@@ -396,7 +396,7 @@ ul {
 }
 
 .thank-you {
-  margin: clamp(32px, 5vh, 56px) 0 0;
+  margin: clamp(32px, 5vh, 56px) 0 0 clamp(40px, 10vw, 160px);
   padding-bottom: clamp(24px, 4vh, 48px);
   font-family: var(--font-serif);
   font-weight: 400;
@@ -414,6 +414,10 @@ ul {
   .essay {
     margin-left: 0;
     max-width: 100%;
+  }
+
+  .thank-you {
+    margin-left: 0;
   }
 
   .about-footer {
