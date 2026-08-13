@@ -261,7 +261,7 @@ ul {
   align-items: center;
   flex-wrap: wrap;
   gap: 24px;
-  padding-top: clamp(48px, 8vh, 96px);
+  padding-top: clamp(100px, 18vh, 200px);
 }
 
 .about-title {
@@ -312,7 +312,7 @@ ul {
 }
 
 .essay {
-  margin: clamp(64px, 10vh, 120px) 0 0 auto;
+  margin: clamp(130px, 18vh, 220px) 0 0 clamp(40px, 10vw, 160px);
   max-width: 620px;
 }
 
@@ -400,6 +400,7 @@ ul {
   font-size: clamp(4rem, 12vw, 9rem);
   line-height: 1;
   color: var(--hero-ink);
+  text-align: left;
 }
 
 @media (max-width: 720px) {
