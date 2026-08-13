@@ -281,17 +281,39 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--muted-ink);
   text-decoration: none;
   font-size: 1rem;
-  transition: font-weight 0.15s ease;
 }
 
-.back-link:hover,
-.back-link:focus-visible {
+/* Text: reserve the bold width in advance via a hidden ::after ghost
+   copy, so switching font-weight on hover never changes the box's
+   width and never shifts anything. */
+.back-link-text {
+  position: relative;
+  display: inline-block;
+  color: var(--muted-ink);
+  transition: color 0.15s ease;
+}
+
+.back-link-text::after {
+  content: attr(data-text);
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
   font-weight: 700;
 }
 
+.back-link:hover .back-link-text,
+.back-link:focus-visible .back-link-text {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* Icon: fixed 32x32 box (box-sizing: border-box), so a thicker hover
+   border eats into the interior rather than growing the box -- no
+   layout shift. Same fill/invert language as the homepage social
+   icons: background fills to --ink, glyph color inverts to --bg. */
 .back-link-icon {
   display: flex;
   align-items: center;
@@ -301,7 +323,27 @@ ul {
   border-radius: 50%;
   border: 1.3px solid var(--muted-ink);
   color: var(--muted-ink);
+  background-color: transparent;
   flex-shrink: 0;
+  transition: background-color 0.15s ease, border-color 0.15s ease, border-width 0.15s ease, color 0.15s ease;
+}
+
+.back-link-icon svg path {
+  stroke-width: 1.6;
+  transition: stroke-width 0.15s ease;
+}
+
+.back-link:hover .back-link-icon,
+.back-link:focus-visible .back-link-icon {
+  background-color: var(--ink);
+  border-color: var(--ink);
+  border-width: 2px;
+  color: var(--bg);
+}
+
+.back-link:hover .back-link-icon svg path,
+.back-link:focus-visible .back-link-icon svg path {
+  stroke-width: 2.2;
 }
 
 .about-hero {
@@ -382,12 +424,26 @@ ul {
   gap: 8px;
 }
 
+/* Reserve the bold width in advance via a hidden ::after ghost copy
+   (same technique as .back-link-text), so the hover weight change
+   never shifts the link or reflows its neighbors. */
 .about-footer a {
+  position: relative;
+  display: inline-block;
   font-size: 1.1rem;
   font-weight: 400;
   text-decoration: none;
   color: var(--ink);
-  transition: font-weight 0.15s ease;
+  transition: color 0.15s ease;
+}
+
+.about-footer a::after {
+  content: attr(data-text);
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  font-weight: 700;
 }
 
 .about-footer a:hover,
