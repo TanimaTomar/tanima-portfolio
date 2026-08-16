@@ -521,18 +521,39 @@ ul {
   color: var(--heading-ink);
 }
 
+/* Gliding sway: gentle, slow drift in place -- small vertical bob
+   plus a slight rotation wobble around her existing tilt, never
+   translating across the page. */
 .work-avatar {
   width: clamp(90px, 8vw, 130px);
   height: auto;
-  transform: rotate(-8deg);
   flex-shrink: 0;
+  transform-origin: center;
+  animation: avatar-glide 6.5s ease-in-out infinite;
+}
+
+@keyframes avatar-glide {
+  0%,
+  100% {
+    transform: rotate(-8deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-6deg) translateY(-7px);
+  }
+}
+
+/* White bounded panel holding the gallery, centered in the page. */
+.illustration-panel {
+  margin: clamp(64px, 10vh, 110px) auto 0;
+  max-width: 960px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: clamp(24px, 4vw, 48px);
 }
 
 .illustration-grid {
   display: flex;
   gap: 24px;
-  margin: clamp(64px, 10vh, 110px) 0 0 clamp(40px, 10vw, 160px);
-  max-width: 900px;
   align-items: flex-start;
 }
 
@@ -550,12 +571,28 @@ ul {
   height: auto;
 }
 
+/* Closing line + footer share one right-aligned column, so their
+   left edges line up with each other. */
+.work-closing-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(40px, 6vh, 64px);
+  width: fit-content;
+  margin: clamp(48px, 7vh, 80px) 0 0 auto;
+}
+
 .work-closing {
-  margin: clamp(48px, 7vh, 80px) 0 0 clamp(40px, 10vw, 160px);
+  margin: 0;
   font-family: var(--font-serif);
   font-weight: 400;
   font-size: clamp(1.5rem, 2.8vw, 2rem);
   color: var(--hero-ink);
+}
+
+.about-footer--single {
+  display: block;
+  margin-top: 0;
 }
 
 @media (max-width: 720px) {
@@ -563,13 +600,26 @@ ul {
     align-items: flex-start;
   }
 
-  .illustration-grid {
-    flex-direction: column;
-    margin-left: 0;
-    max-width: 100%;
+  .work-avatar {
+    animation: none;
   }
 
-  .work-closing {
+  .illustration-grid {
+    flex-direction: column;
+  }
+
+  .illustration-panel {
+    padding: 24px;
+  }
+
+  .work-closing-block {
     margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-avatar {
+    animation: none;
   }
 }
