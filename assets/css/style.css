@@ -523,13 +523,20 @@ ul {
 
 /* Gliding sway: gentle, slow drift in place -- small vertical bob
    plus a slight rotation wobble around her existing tilt, never
-   translating across the page. */
-.work-avatar {
+   translating across the page. Lives on the wrapper so the thought
+   bubbles drift together with her. */
+.work-avatar-wrap {
+  position: relative;
   width: clamp(90px, 8vw, 130px);
-  height: auto;
   flex-shrink: 0;
   transform-origin: center;
   animation: avatar-glide 6.5s ease-in-out infinite;
+}
+
+.work-avatar {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 @keyframes avatar-glide {
@@ -542,6 +549,37 @@ ul {
   }
 }
 
+/* Small trailing dots implying a thought/daydream, drifting up and
+   to the left away from her head. Purely decorative. */
+.thought-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1.3px solid var(--muted-ink);
+  opacity: 0.85;
+}
+
+.thought-bubble--1 {
+  width: 9px;
+  height: 9px;
+  top: 6%;
+  left: 4%;
+}
+
+.thought-bubble--2 {
+  width: 6px;
+  height: 6px;
+  top: -6%;
+  left: -4%;
+}
+
+.thought-bubble--3 {
+  width: 4px;
+  height: 4px;
+  top: -15%;
+  left: -12%;
+}
+
 /* White bounded panel holding the gallery, centered in the page. */
 .illustration-panel {
   margin: clamp(64px, 10vh, 110px) auto 0;
@@ -551,35 +589,43 @@ ul {
   padding: clamp(24px, 4vw, 48px);
 }
 
+/* Masonry packs items by actual height instead of a uniform grid --
+   see illustration-masonry.js. .illustration-sizer is Masonry's
+   convention for reading the column width; it's an empty element and
+   never one of the laid-out items. The float/width fallback below is
+   what's visible for the brief moment before the JS runs. */
 .illustration-grid {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
+  position: relative;
 }
 
-.illustration-col {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+.illustration-sizer,
+.illustration-item {
+  width: 31.5%;
 }
 
-.illustration-grid img {
+.illustration-item {
+  float: left;
+  margin-bottom: 24px;
+}
+
+.illustration-item img {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 
-/* Closing line + footer share one right-aligned column, so their
-   left edges line up with each other. */
+/* Closing line + footer share one row, both centered against the
+   same max-width as the panel above so their left edges line up
+   with the panel's left edge exactly. */
 .work-closing-block {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: clamp(40px, 6vh, 64px);
-  width: fit-content;
-  margin: clamp(48px, 7vh, 80px) 0 0 auto;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 960px;
+  margin: clamp(48px, 7vh, 80px) auto 0;
 }
 
 .work-closing {
@@ -600,12 +646,14 @@ ul {
     align-items: flex-start;
   }
 
-  .work-avatar {
+  .work-avatar-wrap {
     animation: none;
   }
 
-  .illustration-grid {
-    flex-direction: column;
+  .illustration-sizer,
+  .illustration-item {
+    width: 100%;
+    float: none;
   }
 
   .illustration-panel {
@@ -613,13 +661,13 @@ ul {
   }
 
   .work-closing-block {
-    margin-left: 0;
-    width: 100%;
+    flex-direction: column;
+    max-width: 100%;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .work-avatar {
+  .work-avatar-wrap {
     animation: none;
   }
 }

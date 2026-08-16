@@ -23,47 +23,52 @@
         <h1 class="work-title">Illustration</h1>
       </div>
 
-      <img class="work-avatar" src="assets/img/illustration/Top.png" alt="Illustrated self-portrait, wrapped in a blue blanket" />
+      <div class="work-avatar-wrap">
+        <img class="work-avatar" src="assets/img/illustration/Top.png" alt="Illustrated self-portrait, wrapped in a blue blanket" />
+        <span class="thought-bubble thought-bubble--1" aria-hidden="true"></span>
+        <span class="thought-bubble thought-bubble--2" aria-hidden="true"></span>
+        <span class="thought-bubble thought-bubble--3" aria-hidden="true"></span>
+      </div>
     </header>
 
     <div class="illustration-panel">
       <div class="illustration-grid">
-        <div class="illustration-col">
+        <div class="illustration-sizer"></div>
+
+        <div class="illustration-item">
           <img
             src="assets/img/illustration/1.png"
             alt="A page of black-and-white ink panel illustrations, including a birdcage, a jester labeled Joker, and a revolver"
-            loading="lazy"
           />
         </div>
-
-        <div class="illustration-col">
+        <div class="illustration-item">
           <img
             src="assets/img/illustration/2.png"
             alt="Watercolor illustration of a moonlit dreamscape with a sun, waves, and mushrooms"
-            loading="lazy"
-          />
-          <img
-            src="assets/img/illustration/4.png"
-            alt="Watercolor illustration of a girl reaching up toward a rainbow, standing among flowers"
-            loading="lazy"
           />
         </div>
-
-        <div class="illustration-col">
+        <div class="illustration-item">
           <img
             src="assets/img/illustration/3.png"
             alt="Watercolor illustration of hot air balloons rising over a small village"
-            loading="lazy"
           />
+        </div>
+        <div class="illustration-item">
+          <img
+            src="assets/img/illustration/4.png"
+            alt="Watercolor illustration of a girl reaching up toward a rainbow, standing among flowers"
+          />
+        </div>
+        <div class="illustration-item">
           <img
             src="assets/img/illustration/5.png"
             alt="Ink illustration of a character skating inside a circular frame"
-            loading="lazy"
           />
+        </div>
+        <div class="illustration-item">
           <img
             src="assets/img/illustration/6.png"
             alt="Watercolor illustration of a baby sleeping inside a poppy flower, lit by a lamp"
-            loading="lazy"
           />
         </div>
       </div>
@@ -87,6 +92,9 @@
 
   </div>
 
+  <script src="assets/js/vendor/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/js/vendor/masonry.pkgd.min.js"></script>
+  <script src="assets/js/illustration-masonry.js"></script>
   <script src="assets/js/background-effect.js"></script>
   <script src="assets/js/page-transition.js"></script>
 </body>
