@@ -504,7 +504,7 @@ ul {
   align-items: center;
   flex-wrap: wrap;
   gap: 24px;
-  padding-top: clamp(100px, 18vh, 200px);
+  padding-top: clamp(64px, 12vh, 140px);
 }
 
 .work-heading {
@@ -550,13 +550,28 @@ ul {
 }
 
 /* Small trailing dots implying a thought/daydream, drifting up and
-   to the left away from her head. Purely decorative. */
+   to the left away from her head. Each one pulses on its own loop,
+   staggered so the pulse ripples from the biggest bubble up to the
+   smallest -- like a looping "thinking..." GIF. */
 .thought-bubble {
   position: absolute;
   border-radius: 50%;
   background-color: #ffffff;
   border: 1.3px solid var(--muted-ink);
-  opacity: 0.85;
+  transform-origin: center;
+  animation: thought-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes thought-pulse {
+  0%,
+  100% {
+    transform: scale(0.85);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.95;
+  }
 }
 
 .thought-bubble--1 {
@@ -564,6 +579,7 @@ ul {
   height: 9px;
   top: 6%;
   left: 4%;
+  animation-delay: 0s;
 }
 
 .thought-bubble--2 {
@@ -571,6 +587,7 @@ ul {
   height: 6px;
   top: -6%;
   left: -4%;
+  animation-delay: 0.25s;
 }
 
 .thought-bubble--3 {
@@ -578,6 +595,7 @@ ul {
   height: 4px;
   top: -15%;
   left: -12%;
+  animation-delay: 0.5s;
 }
 
 /* White bounded panel holding the gallery, centered in the page. */
@@ -626,6 +644,7 @@ ul {
   gap: 24px;
   max-width: 960px;
   margin: clamp(48px, 7vh, 80px) auto 0;
+  padding-bottom: clamp(48px, 8vh, 96px);
 }
 
 .work-closing {
@@ -667,7 +686,8 @@ ul {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .work-avatar-wrap {
+  .work-avatar-wrap,
+  .thought-bubble {
     animation: none;
   }
 }
