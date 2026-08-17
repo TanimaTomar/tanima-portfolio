@@ -115,6 +115,10 @@ ul {
   max-width: 34ch;
 }
 
+.site-nav .footer-label {
+  text-align: right;
+}
+
 .site-nav ul {
   display: flex;
   flex-direction: column;
