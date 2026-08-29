@@ -1027,9 +1027,18 @@ ul {
 }
 
 /* "The idea" image + speech bubble */
+/* White bounded panel holding the image + speech bubble + child task
+   + summary together, matching the Illustration page's panel. */
+.idea-panel {
+  margin-top: 24px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: clamp(24px, 4vw, 48px);
+}
+
 .case-split--idea {
-  margin: 24px 0;
-  align-items: center;
+  margin: 0;
+  align-items: flex-start;
 }
 
 .case-idea-gif {
@@ -1039,23 +1048,32 @@ ul {
   display: block;
 }
 
-.case-speech-bubble {
+.case-idea-column {
   flex: 1;
   min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.case-idea-column p {
+  margin: 0 !important;
+}
+
+.case-speech-bubble {
   background-color: var(--speech-bg);
   border-radius: 16px;
   padding: 20px 22px;
 }
 
 .case-speech-bubble p {
-  margin: 0 !important;
   font-family: var(--font-serif);
   font-style: italic;
   color: var(--ink) !important;
 }
 
-.case-idea-task {
-  margin-top: 4px !important;
+.case-idea-summary {
+  margin-top: 20px !important;
 }
 
 /* Numbered refuse-to-build grid */
