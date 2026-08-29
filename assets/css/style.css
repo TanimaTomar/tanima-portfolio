@@ -895,13 +895,24 @@ ul {
 .case-callout {
   flex: 1;
   min-width: 220px;
+  display: flex;
+  align-items: center;
 }
 
+/* The GIF already has its own peach card design baked in, so this
+   just displays it at its natural aspect ratio -- no extra
+   background/padding that would double up the card look. */
 .case-callout-media {
-  height: 100%;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+/* Fallback look if the image fails to load. */
+.case-callout-media.case-callout-media--pending {
   min-height: 140px;
   background-color: var(--callout-bg);
-  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -909,14 +920,6 @@ ul {
   text-align: center;
   font-size: 0.85rem;
   color: #8a6d3b;
-}
-
-.case-callout-media img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16px;
 }
 
 /* Stat cards */
