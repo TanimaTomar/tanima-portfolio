@@ -29,6 +29,9 @@
   --callout-bg: #f7e6c4;
   --speech-bg: #e9f1fb;
   --status-blue: #2f6fd1;
+
+  /* Cubism Through Shadows */
+  --warning-ink: #c1502e;
 }
 
 /* ---------------------------------------------------
@@ -1213,6 +1216,233 @@ ul {
   .case-meta {
     flex-direction: column;
     gap: 24px;
+  }
+}
+
+/* ---------------------------------------------------
+   Case study page (Cubism Through Shadows)
+--------------------------------------------------- */
+
+/* 2x2 meta grid (Format/Context/Role/Age) instead of Foundtale's
+   single row of three -- reuses .case-meta-col for label/value. */
+.case-meta--grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 32px;
+}
+
+.case-subhead {
+  margin: 0 0 4px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--heading-ink);
+}
+
+.case-caveat {
+  font-style: italic;
+}
+
+.case-emphasis {
+  font-weight: 700;
+  color: var(--heading-ink);
+}
+
+/* Phase label + full-width process photo, used twice ("Phase 01",
+   "Phase 02") -- each photo is a pre-built collage image, so this
+   just pairs a short label column with it. */
+.phase-block {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  margin: clamp(24px, 4vh, 32px) 0;
+}
+
+.phase-label {
+  flex: 0 0 180px;
+}
+
+.phase-number {
+  margin: 0 0 4px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--heading-ink);
+}
+
+.phase-caption {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--muted-ink);
+}
+
+.phase-image {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* "Where It Actually Sits" heading is centered on the page, unlike
+   the other left-aligned case-section headings. */
+.case-section--centered h2 {
+  text-align: center;
+}
+
+/* Gallery -> Activity Room -> Gallery flow diagram */
+.flow-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px 16px;
+  margin: clamp(24px, 4vh, 40px) 0;
+  text-align: center;
+}
+
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 170px;
+  max-width: 220px;
+}
+
+.flow-title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--heading-ink);
+}
+
+.flow-arrow-down {
+  color: var(--muted-ink);
+  line-height: 1;
+}
+
+.flow-action {
+  margin: 4px 0 0;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+}
+
+.flow-detail {
+  margin: 2px 0 0;
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+}
+
+.flow-arrow-right {
+  align-self: center;
+  margin-top: 12px;
+  color: var(--muted-ink);
+}
+
+/* Bordered format/spec box */
+.spec-box {
+  border: 1px solid rgba(47, 47, 48, 0.55);
+  border-radius: 4px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px 28px;
+}
+
+.spec-box p {
+  margin: 0 0 16px;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--ink-faint);
+}
+
+.spec-box p:last-child {
+  margin-bottom: 0;
+}
+
+.spec-label {
+  font-weight: 700;
+  color: var(--heading-ink);
+}
+
+.spec-warning-label {
+  font-weight: 700;
+  color: var(--warning-ink) !important;
+}
+
+.spec-warning {
+  color: var(--warning-ink) !important;
+}
+
+/* The Mechanism: two side-by-side pending images + captions */
+.mechanism-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin: clamp(24px, 4vh, 32px) 0;
+}
+
+.mechanism-item p {
+  margin: 14px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--ink-faint);
+}
+
+.mechanism-image-placeholder {
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  border: 1.5px dashed var(--muted-ink);
+  background-color: #f0f0ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-ink);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 20px;
+}
+
+.mechanism-summary {
+  font-size: 0.9rem;
+  color: var(--ink-faint);
+}
+
+/* Same dashed-placeholder look, sized to fill the Takeaway callout
+   column instead of the Mechanism grid's fixed 4:3 aspect ratio. */
+.case-takeaway-placeholder {
+  aspect-ratio: auto;
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+}
+
+@media (max-width: 900px) {
+  .phase-block,
+  .mechanism-grid {
+    flex-direction: column;
+  }
+
+  .mechanism-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .phase-label {
+    flex: none;
+  }
+
+  .flow-arrow-right {
+    display: none;
+  }
+
+  .case-meta--grid2 {
+    grid-template-columns: 1fr;
   }
 }
 
