@@ -1215,3 +1215,69 @@ ul {
     gap: 24px;
   }
 }
+
+/* ---------------------------------------------------
+   Photography page
+--------------------------------------------------- */
+.photo-subtitle {
+  margin: 0 0 24px;
+  font-size: 0.9rem;
+  color: var(--ink-faint);
+}
+
+/* Same masonry-packing pattern as .illustration-grid, but 2 columns
+   instead of 3 -- see photography-masonry.js. */
+.photo-grid {
+  position: relative;
+}
+
+.photo-sizer,
+.photo-item {
+  width: 48.5%;
+}
+
+.photo-item {
+  float: left;
+  margin-bottom: 24px;
+}
+
+.photo-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.photo-single {
+  max-width: 380px;
+  margin: 24px auto 0;
+}
+
+.photo-single img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Fallback look while a photo is still pending upload. */
+.photo-placeholder {
+  border-radius: 8px;
+  border: 1.5px dashed var(--muted-ink);
+  background-color: #f0f0ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-ink);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 16px;
+}
+
+@media (max-width: 720px) {
+  .photo-sizer,
+  .photo-item {
+    width: 100%;
+    float: none;
+  }
+}
