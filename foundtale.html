@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foundtale — tanima</title>
+  <meta name="description" content="Foundtale — a research-backed concept for a physical storybook and light-based play that turns a parent-child reading moment into a shared game of imagination." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <div class="page">
+
+    <header class="case-header">
+      <div class="case-header-top">
+        <div class="case-heading">
+          <a href="index.html#work" class="back-link" aria-label="Back to work">
+            <span class="back-link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 6l-6 6 6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
+          <h1 class="case-title">Foundtale</h1>
+          <span class="case-tag">[Research-backed concept · Pre-prototype]</span>
+        </div>
+
+        <div class="case-status">
+          <span>In progress</span>
+          <span class="status-dot" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <p class="case-subtitle">The book only has half the picture. The room fills in the rest.</p>
+    </header>
+
+    <figure class="case-hero">
+      <div class="case-hero-placeholder">
+        <span>Hero image pending — will drop in once re-uploaded</span>
+      </div>
+      <figcaption>Concept visualization created with Google Gemini</figcaption>
+    </figure>
+
+    <div class="case-content">
+
+      <div class="case-meta">
+        <div class="case-meta-col">
+          <p class="case-meta-label">Format</p>
+          <p class="case-meta-value">Physical storybook + light-based play + a parent companion screen that reveals one line at a time</p>
+        </div>
+        <div class="case-meta-col">
+          <p class="case-meta-label">Context</p>
+          <p class="case-meta-value">Self-initiated, built from a 54-parent survey and graduate coursework in developmental psychology</p>
+        </div>
+        <div class="case-meta-col">
+          <p class="case-meta-label">Role</p>
+          <p class="case-meta-value">Solo — research, survey design, synthesis, concept &amp; interaction design</p>
+        </div>
+      </div>
+
+      <div class="case-meta-secondary">
+        <p class="case-meta-label">Audience</p>
+        <p class="case-meta-value">Parent-child pairs; children roughly ages 3–8</p>
+        <p class="case-meta-link-row">
+          <span class="case-meta-label">My learning &amp; reflections</span> — Theories from Harvard Graduate School of Education that shaped this project
+          <br />
+          <a href="#" class="case-meta-link">Link coming soon</a>
+        </p>
+      </div>
+
+      <hr class="case-divider" />
+
+      <section class="case-section">
+        <h2>What it is</h2>
+        <div class="case-split">
+          <p class="case-split-text">
+            Foundtale is a picture book with pieces missing. A parent reads the story aloud from a companion screen, one line at a time. Each line comes with a small prompt, not an answer, a nudge. The child takes that nudge into the room, finds an object that could stand in for the missing piece, and holds it behind the page. When the torch completes the scene, the story looks different every time it's read, because the object never does.
+          </p>
+          <div class="case-callout">
+            <div class="case-callout-media">
+              <span>GIF pending — being compressed</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>What actually happened when I tested it with 54 parents</h2>
+        <p>I went in assuming the problem was time. The survey complicated that assumption. Parents weren't necessarily short on time together — they were looking for better ways to use it.</p>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <p class="stat-title">Technology during together-time</p>
+            <div class="stat-headline">
+              <span class="stat-number">76%</span>
+              <span class="stat-desc">said technology shows up during time they'd otherwise count as together-time</span>
+            </div>
+            <div class="stat-bar">
+              <span class="stat-bar-seg" style="width: 24.1%; background: var(--stat-bar-1);"></span>
+              <span class="stat-bar-seg" style="width: 51.9%; background: var(--stat-bar-2);"></span>
+              <span class="stat-bar-seg" style="width: 24%; background: var(--stat-bar-4);"></span>
+            </div>
+            <div class="stat-bar-labels">
+              <span>24.1%<br />Yes</span>
+              <span>51.9%<br />Sometimes</span>
+              <span>24.1%<br />No</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <p class="stat-title">Satisfaction with shared time</p>
+            <div class="stat-headline">
+              <span class="stat-number">48.1%</span>
+              <span class="stat-desc">said they were somewhat satisfied with their shared time — the largest response, closely followed by very satisfied</span>
+            </div>
+            <div class="stat-bar">
+              <span class="stat-bar-seg" style="width: 48.1%; background: var(--stat-bar-1);"></span>
+              <span class="stat-bar-seg" style="width: 42.6%; background: var(--stat-bar-2);"></span>
+              <span class="stat-bar-seg" style="width: 9.3%; background: var(--stat-bar-4);"></span>
+            </div>
+            <div class="stat-bar-labels">
+              <span>48.1%<br />Somewhat satisfied</span>
+              <span>42.6%<br />Very satisfied</span>
+              <span>9.3%<br />Not satisfied</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <p class="stat-title">What gets in the way</p>
+            <div class="stat-headline">
+              <span class="stat-number">35.2%</span>
+              <span class="stat-desc">said fatigue and stress was their biggest barrier, ahead of work pressure and lack of time or ideas</span>
+            </div>
+            <div class="stat-bar">
+              <span class="stat-bar-seg" style="width: 35.2%; background: var(--stat-bar-1);"></span>
+              <span class="stat-bar-seg" style="width: 27.8%; background: var(--stat-bar-2);"></span>
+              <span class="stat-bar-seg" style="width: 16.7%; background: var(--stat-bar-3);"></span>
+              <span class="stat-bar-seg" style="width: 20.4%; background: var(--stat-bar-4);"></span>
+            </div>
+            <div class="stat-bar-labels">
+              <span>35.2%<br />Fatigue/stress</span>
+              <span>27.8%<br />Work pressure</span>
+              <span>16.7%<br />Lack of ideas</span>
+              <span>20.4%<br />Other</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <p class="stat-title">What would help</p>
+            <div class="stat-headline">
+              <span class="stat-number">35.2%</span>
+              <span class="stat-desc">asked for ready-to-use activity ideas most often, ahead of quick-bonding tools and distraction guidance</span>
+            </div>
+            <div class="stat-bar">
+              <span class="stat-bar-seg" style="width: 35.2%; background: var(--stat-bar-1);"></span>
+              <span class="stat-bar-seg" style="width: 24.1%; background: var(--stat-bar-2);"></span>
+              <span class="stat-bar-seg" style="width: 20.4%; background: var(--stat-bar-3);"></span>
+              <span class="stat-bar-seg" style="width: 20.4%; background: var(--stat-bar-4);"></span>
+            </div>
+            <div class="stat-bar-labels">
+              <span>35.2%<br />Ready to use ideas</span>
+              <span>24.1%<br />Bonding tools</span>
+              <span>20.4%<br />Distraction Guidance</span>
+              <span>20.4%<br />Other</span>
+            </div>
+          </div>
+        </div>
+
+        <p>None of that says parents need more time. It says the cost isn't the minutes — it's what has to happen inside them, and that reframed the whole brief.</p>
+        <p>Not how do we free up an evening — but how do we hand a parent both the idea and a way into the conversation, for the moments they don't have the energy or the instinct to build either from scratch.</p>
+      </section>
+
+      <hr class="case-divider" />
+
+      <blockquote class="case-pullquote">
+        <p>Children don't need to be taught that a sleeve can become a tree. Pretend play is already there. What's missing is a prompt to start the exchange — and a parent ready to receive whatever names back.</p>
+        <p class="case-pullquote-bold">The technology supports the parent; the parent supports the child; the world around them supplies the material.</p>
+      </blockquote>
+
+      <hr class="case-divider" />
+
+      <section class="case-section">
+        <h2>The idea</h2>
+        <p>In the current story, a boy named Theo is on an expedition through a forest where nothing looks like the trees he knows.</p>
+
+        <div class="case-split case-split--idea">
+          <img
+            class="case-idea-gif"
+            src="assets/img/foundtale/foundtale-theo-sequence.gif"
+            alt="Animated sequence of Theo's forest, where the mystery tree at the center takes a different shape each frame — a spatula, a strainer, combs, and wrapped candy"
+          />
+          <div class="case-speech-bubble">
+            <p>"Theo found the first tree. Its shadow looked nothing like a tree at all."</p>
+          </div>
+        </div>
+
+        <p class="case-idea-task"><strong>Child task:</strong> Find the tree that's different from all the rest.</p>
+        <p>The catch — every tree looks different to him, so the task can't be solved by comparing. The only way forward is to make a tree of his own.</p>
+        <p>Whatever the child finds and holds behind the page, lit by the torch, becomes the answer. There is no correct tree. It becomes Theo's tree because the child chose it.</p>
+      </section>
+
+      <hr class="case-divider" />
+
+      <section class="case-section">
+        <h2>Where the software stops on purpose</h2>
+        <p>
+          This was the harder design decision than anything I built. The parent controls pacing — no timer nudging the family forward. No animation rewarding completion. No app voice taking over the narration. No screen the child looks at directly. The software's entire job:
+          <span class="case-underline">hand the parent a line, offer a prompt, get out of the way</span>.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>What I refused to build</h2>
+        <div class="refuse-grid">
+          <div class="refuse-item">
+            <p class="refuse-number">01</p>
+            <p class="refuse-title">No correct answers</p>
+            <p>The moment the product decides whether something is a "good" tree, the child stops imagining and starts trying to get it right. I want the child asking what else could this be, not if I got it right.</p>
+          </div>
+          <div class="refuse-item">
+            <p class="refuse-number">02</p>
+            <p class="refuse-title">No AI-generated storytelling</p>
+            <p>The app could easily create a new story every time. I chose not to. My job is to help the parent start a conversation, not replace another person. Here, a child's strange answer is more valuable than a perfect one generated by AI.</p>
+          </div>
+          <div class="refuse-item">
+            <p class="refuse-number">03</p>
+            <p class="refuse-title">No solo mode</p>
+            <p>The parent isn't an extra feature that can be removed later. The experience is built around doing it together. Without the parent, it wouldn't be a simpler version of Foundtale — it would be a different product solving a different problem.</p>
+          </div>
+        </div>
+        <p>None of these boundaries ask for more of a parent's day. Developmental psychology suggests a child doesn't need hours of undivided attention to feel emotionally secure — something closer to twenty focused minutes is enough. The goal was never to compete for more time. Just to make sure the minutes that already exist actually land.</p>
+      </section>
+
+    </div>
+
+    <section class="case-testing">
+      <div class="case-content">
+        <h2>Testing the concept</h2>
+        <div class="testing-grid">
+          <div class="testing-col">
+            <p class="testing-label">01<br />What I did:</p>
+            <p>I tested this with three to four parent-child pairs. Some sessions I watched directly; others were shared with me as private videos or described afterward in voice messages. Rather than build a full book, I adapted one page from an existing folktale into the cut-out-and-torch format — no app, just paper and a flashlight.</p>
+            <p>Here's what showed up:</p>
+            <p>I was hoping to see: <em>prompt → conversation → search → discovery → interpretation → story</em></p>
+            <p>Instead, I often saw: <em>line read → question → answer → next page</em></p>
+            <ul class="testing-list">
+              <li>This revealed a need for prompts that keep the conversation open.</li>
+              <li>Children understood that the missing piece could come from the room.</li>
+              <li>The mechanic created excitement, not frustration.</li>
+            </ul>
+          </div>
+          <div class="testing-col">
+            <p class="testing-label">02<br />What I would want to learn next:</p>
+            <ul class="testing-list">
+              <li>Does the prompt actually change how the parent responds — does it help them follow the child's idea rather than steer them toward an answer?</li>
+              <li>What kinds of objects and ideas do children bring in? Do they surprise the parent, or do they mostly narrow to the obvious?</li>
+              <li>Does the story start to feel like the child's own as they contribute to it, or does it stay read as an existing story with additions?</li>
+              <li>What happens on a second or third reading — does the child find new possibilities, or does it start to feel predictable?</li>
+              <li>How much of this is life story, and how much is just the pleasure of searching the room for something?</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="case-closing">Does this create a better parent-child interaction,<br />or just a clever activity?</p>
+
+    <footer class="case-footer">
+      <p class="case-copyright">© 2026 Tanima Tomar. All concepts, research, and content on this page are original work and may not be reproduced or reused without permission.</p>
+      <a href="index.html#work" class="back-link case-footer-back">
+        <span class="back-link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 6l-6 6 6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+        <span class="back-link-text" data-text="Work">Work</span>
+      </a>
+    </footer>
+
+  </div>
+
+  <script src="assets/js/background-effect.js"></script>
+  <script src="assets/js/page-transition.js"></script>
+</body>
+</html>
