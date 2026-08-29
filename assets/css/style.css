@@ -772,6 +772,14 @@ ul {
   margin: clamp(32px, 5vh, 56px) 0 0;
 }
 
+.case-hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+/* Fallback look if an image is still pending / fails to load. */
 .case-hero-placeholder {
   aspect-ratio: 2.3 / 1;
   border-radius: 14px;
