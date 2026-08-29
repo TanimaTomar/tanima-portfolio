@@ -722,6 +722,12 @@ ul {
   align-items: center;
   flex-wrap: wrap;
   gap: 24px;
+  /* Matches .work-avatar-wrap's height on the Illustration page --
+     that tall sibling is what pushes its title down within the
+     centered row. Replicating the same min-height here keeps both
+     pages' titles starting at the same point despite Foundtale
+     having no equivalent tall element in its header row. */
+  min-height: clamp(90px, 8vw, 130px);
 }
 
 .case-heading {
@@ -1031,9 +1037,6 @@ ul {
    + summary together, matching the Illustration page's panel. */
 .idea-panel {
   margin-top: 24px;
-  background-color: #ffffff;
-  border-radius: 20px;
-  padding: clamp(24px, 4vw, 48px);
 }
 
 .case-split--idea {
