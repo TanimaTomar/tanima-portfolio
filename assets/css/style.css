@@ -1494,7 +1494,7 @@ ul {
 /* Small floated pending-image note beside "The concept" copy */
 .concept-note {
   float: right;
-  width: 180px;
+  width: 240px;
   margin: 4px 0 16px 24px;
 }
 
@@ -1519,12 +1519,24 @@ ul {
   padding: 10px;
 }
 
-.concept-note-caption {
-  margin: 8px 0 0;
-  font-size: 0.78rem;
-  line-height: 1.4;
-  color: var(--muted-ink);
-  text-align: center;
+/* White card holding the wireframe gif at its native size, instead
+   of stretching it full-width (which was blurring it). */
+.wireframe-panel {
+  clear: both;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: clamp(20px, 3vw, 32px);
+  display: flex;
+  justify-content: center;
+  margin: clamp(24px, 4vh, 32px) 0;
+}
+
+.wireframe-image {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
 }
 
 /* Three-photo row ("Why this idea") */
@@ -1560,27 +1572,7 @@ ul {
 .trio-image {
   display: block;
   width: 100%;
-  height: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* Some trio items have two photos instead of one -- shown side by
-   side at the same combined width as a single trio-image. */
-.trio-image-pair {
-  display: flex;
-  gap: 6px;
-  height: 100%;
-}
-
-.trio-image-pair img {
-  flex: 1;
-  min-width: 0;
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
   border-radius: 10px;
 }
 
@@ -1666,7 +1658,7 @@ ul {
 @media (max-width: 900px) {
   .concept-note {
     float: none;
-    width: 180px;
+    width: 240px;
     margin: 0 0 20px;
   }
 
