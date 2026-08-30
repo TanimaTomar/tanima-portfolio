@@ -1494,8 +1494,15 @@ ul {
 /* Small floated pending-image note beside "The concept" copy */
 .concept-note {
   float: right;
-  width: 130px;
+  width: 180px;
   margin: 4px 0 16px 24px;
+}
+
+.concept-note-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 .concept-note-placeholder {
@@ -1659,7 +1666,7 @@ ul {
 @media (max-width: 900px) {
   .concept-note {
     float: none;
-    width: 130px;
+    width: 180px;
     margin: 0 0 20px;
   }
 
