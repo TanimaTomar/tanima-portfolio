@@ -1380,12 +1380,25 @@ ul {
   color: var(--warning-ink) !important;
 }
 
-/* The Mechanism: two side-by-side pending images + captions */
+/* The Mechanism: white card holding two side-by-side concept
+   illustrations + captions, matching the reference's card treatment. */
+.mechanism-panel {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: clamp(24px, 4vw, 40px);
+  margin: clamp(24px, 4vh, 32px) 0;
+}
+
+.mechanism-panel-caption {
+  margin: 0 0 16px;
+  font-size: 0.8rem;
+  color: var(--muted-ink);
+}
+
 .mechanism-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
-  margin: clamp(24px, 4vh, 32px) 0;
 }
 
 .mechanism-item p {
@@ -1395,6 +1408,14 @@ ul {
   color: var(--ink-faint);
 }
 
+.mechanism-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Fallback look if a Mechanism/Takeaway image is still pending. */
 .mechanism-image-placeholder {
   aspect-ratio: 4 / 3;
   border-radius: 12px;
@@ -1410,6 +1431,7 @@ ul {
 }
 
 .mechanism-summary {
+  margin-top: clamp(20px, 3vh, 28px);
   font-size: 0.9rem;
   color: var(--ink-faint);
 }
