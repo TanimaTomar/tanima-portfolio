@@ -1535,7 +1535,7 @@ ul {
 .wireframe-image {
   display: block;
   width: 100%;
-  max-width: 520px;
+  max-width: 620px;
   height: auto;
   border-radius: 10px;
 }
@@ -1597,12 +1597,15 @@ ul {
   gap: 32px;
 }
 
-.principle-label {
+/* Scoped to .principle-row so this beats .case-section p's
+   specificity -- a bare .principle-label was losing to it and
+   rendering grey instead of dark. */
+.principle-row .principle-label {
   flex: 0 0 190px;
   margin: 0;
   font-weight: 700;
   font-size: 0.92rem;
-  color: var(--heading-ink);
+  color: var(--ink);
 }
 
 .principle-text {
@@ -1614,7 +1617,7 @@ ul {
 }
 
 .principle-text strong {
-  color: var(--ink);
+  color: var(--muted-ink);
   font-weight: 700;
 }
 
@@ -1629,11 +1632,15 @@ ul {
   flex: 0 0 220px;
 }
 
-.decision-heading {
+/* Same heading treatment as .case-section h2 -- "Product decisions"
+   and "How I would test this" are headings too, just placed in the
+   label column instead of full-width. Scoped to .decision-label so
+   it beats .case-section p's specificity. */
+.decision-label .decision-heading {
   margin: 0 0 8px;
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
   color: var(--heading-ink);
 }
 
