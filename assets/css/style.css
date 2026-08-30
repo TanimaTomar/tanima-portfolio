@@ -1527,16 +1527,24 @@ ul {
   border-radius: 20px;
   padding: clamp(20px, 3vw, 32px);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin: clamp(24px, 4vh, 32px) 0;
 }
 
 .wireframe-image {
   display: block;
   width: 100%;
-  max-width: 400px;
+  max-width: 520px;
   height: auto;
   border-radius: 10px;
+}
+
+.wireframe-caption {
+  margin: 14px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted-ink);
+  text-align: center;
 }
 
 /* Three-photo row ("Why this idea") */
