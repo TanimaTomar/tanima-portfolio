@@ -801,6 +801,7 @@ ul {
   font-size: 0.9rem;
   text-align: center;
   padding: 24px;
+  clear: both;
 }
 
 .case-hero figcaption {
@@ -1483,6 +1484,171 @@ ul {
 
   .case-meta--grid2 {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------------------------------------------
+   Case study page (Inkling Isle)
+--------------------------------------------------- */
+
+/* Small floated pending-image note beside "The concept" copy */
+.concept-note {
+  float: right;
+  width: 130px;
+  margin: 4px 0 16px 24px;
+}
+
+.concept-note-placeholder {
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  border: 1.5px dashed var(--muted-ink);
+  background-color: #f0f0ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-ink);
+  font-size: 0.72rem;
+  text-align: center;
+  padding: 10px;
+}
+
+.concept-note-caption {
+  margin: 8px 0 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--muted-ink);
+  text-align: center;
+}
+
+/* Three-photo row ("Why this idea") */
+.trio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: clamp(24px, 4vh, 32px) 0;
+  clear: both;
+}
+
+.trio-item p {
+  margin: 14px 0 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--ink-faint);
+}
+
+.trio-image-placeholder {
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  border: 1.5px dashed var(--muted-ink);
+  background-color: #f0f0ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-ink);
+  font-size: 0.82rem;
+  text-align: center;
+  padding: 16px;
+}
+
+/* Three design principles */
+.principle-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vh, 28px);
+  margin-top: clamp(24px, 4vh, 32px);
+}
+
+.principle-row {
+  display: flex;
+  gap: 32px;
+}
+
+.principle-label {
+  flex: 0 0 190px;
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--heading-ink);
+}
+
+.principle-text {
+  flex: 1;
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--ink-faint);
+}
+
+.principle-text strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* Label column + wide content column, reused for "Product decisions"
+   and "How I would test this" */
+.decision-row {
+  display: flex;
+  gap: 32px;
+}
+
+.decision-label {
+  flex: 0 0 220px;
+}
+
+.decision-heading {
+  margin: 0 0 8px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--heading-ink);
+}
+
+.decision-copy {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ink-faint);
+}
+
+.decision-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.decision-list p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--ink-faint);
+}
+
+.decision-list strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .concept-note {
+    float: none;
+    width: 130px;
+    margin: 0 0 20px;
+  }
+
+  .trio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .principle-row,
+  .decision-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .principle-label,
+  .decision-label {
+    flex: none;
   }
 }
 
