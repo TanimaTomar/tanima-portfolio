@@ -1820,7 +1820,7 @@ ul {
   display: flex;
   flex-wrap: wrap;
   gap: clamp(24px, 4vw, 40px);
-  margin-top: clamp(40px, 6vh, 64px);
+  margin-top: clamp(64px, 10vh, 104px);
   border-bottom: 1px solid rgba(118, 132, 130, 0.25);
 }
 

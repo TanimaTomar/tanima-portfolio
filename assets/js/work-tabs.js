@@ -2,10 +2,20 @@
  * Work page category tabs. Learning Design and Product Design expand
  * a row of project pills in place and swap the quote below; Illustration
  * and Photography are plain links (no sub-projects to pick from), so
- * they just navigate -- no JS needed for those two.
+ * they just navigate.
+ *
+ * The selected category (learning/product) is remembered in
+ * sessionStorage, so coming back from a case-study page (browser
+ * back, or the case study's own "Work" link) lands back on the same
+ * tab instead of the default screen. Illustration/Photography clear
+ * that memory on the way out, since they have no tab state of their
+ * own -- returning to Work after visiting either should show the
+ * default screen, not whatever was selected before.
  */
 (function () {
   'use strict';
+
+  var STORAGE_KEY = 'workActiveCategory';
 
   var categories = {
     learning: {
@@ -30,11 +40,32 @@
   };
 
   var tabs = document.querySelectorAll('.work-tab[data-category]');
+  var directLinks = document.querySelectorAll('.work-tab[href]');
   var pillsWrap = document.getElementById('work-pills');
   var quoteText = document.getElementById('work-quote-text');
   var quoteNote = document.getElementById('work-quote-note');
 
   if (!tabs.length || !pillsWrap || !quoteText) return;
+
+  function readStored() {
+    try {
+      return sessionStorage.getItem(STORAGE_KEY);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function writeStored(value) {
+    try {
+      if (value) {
+        sessionStorage.setItem(STORAGE_KEY, value);
+      } else {
+        sessionStorage.removeItem(STORAGE_KEY);
+      }
+    } catch (e) {
+      /* storage unavailable (private mode, etc.) -- fine to no-op */
+    }
+  }
 
   function renderPills(pills) {
     pillsWrap.innerHTML = '';
@@ -52,7 +83,7 @@
     pillsWrap.hidden = false;
   }
 
-  function selectCategory(category) {
+  function selectCategory(category, opts) {
     var data = categories[category];
     if (!data) return;
 
@@ -72,6 +103,10 @@
     }
 
     renderPills(data.pills);
+
+    if (!opts || opts.persist !== false) {
+      writeStored(category);
+    }
   }
 
   tabs.forEach(function (tab) {
@@ -79,4 +114,17 @@
       selectCategory(tab.dataset.category);
     });
   });
+
+  // Illustration/Photography have no tab state of their own -- clear
+  // any remembered category so a later visit starts from default.
+  directLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      writeStored(null);
+    });
+  });
+
+  var restored = readStored();
+  if (restored && categories[restored]) {
+    selectCategory(restored, { persist: false });
+  }
 })();
