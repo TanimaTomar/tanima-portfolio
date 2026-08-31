@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work — tanima</title>
+  <meta name="description" content="What Tanima Tomar has shipped, and what she's building toward — learning design, product design, illustration, and photography." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <div class="page">
+
+    <header class="work-page-header">
+      <div>
+        <h1 class="work-page-title">Work</h1>
+        <p class="work-page-subtitle">What I've shipped, and what I'm building toward.</p>
+      </div>
+
+      <nav class="work-page-nav" aria-label="Primary">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="work-tabs" role="tablist" aria-label="Work categories">
+      <button
+        class="work-tab"
+        type="button"
+        data-category="learning"
+        data-label="Learning Design"
+        role="tab"
+        aria-selected="false"
+      >Learning Design</button>
+      <button
+        class="work-tab"
+        type="button"
+        data-category="product"
+        data-label="Product Design"
+        role="tab"
+        aria-selected="false"
+      >Product Design</button>
+      <a class="work-tab" data-label="Illustration" href="illustration.html">Illustration</a>
+      <a class="work-tab" data-label="Photography" href="photography.html">Photography</a>
+    </div>
+
+    <div class="work-pills" id="work-pills" hidden></div>
+
+    <blockquote class="work-quote">
+      <p id="work-quote-text">Product design is my foundation. What I learned at the Harvard Graduate School of Education shapes how I design for children.</p>
+    </blockquote>
+    <p class="work-quote-note" id="work-quote-note" hidden></p>
+
+  </div>
+
+  <script src="assets/js/work-tabs.js"></script>
+  <script src="assets/js/background-effect.js"></script>
+  <script src="assets/js/page-transition.js"></script>
+</body>
+</html>

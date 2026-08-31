@@ -1763,3 +1763,190 @@ ul {
     float: none;
   }
 }
+
+/* ---------------------------------------------------
+   Work page
+--------------------------------------------------- */
+.work-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-top: clamp(64px, 12vh, 140px);
+}
+
+.work-page-title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--heading-ink);
+}
+
+.work-page-subtitle {
+  margin: 14px 0 0;
+  font-size: 1rem;
+  color: var(--ink-faint);
+}
+
+.work-page-nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.work-page-nav a {
+  font-size: 1.05rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--ink);
+  transition: font-weight 0.15s ease;
+}
+
+.work-page-nav a:hover,
+.work-page-nav a:focus-visible {
+  font-weight: 700;
+}
+
+/* Category tabs */
+.work-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(24px, 4vw, 40px);
+  margin-top: clamp(40px, 6vh, 64px);
+  border-bottom: 1px solid rgba(118, 132, 130, 0.25);
+}
+
+.work-tab {
+  position: relative;
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0 0 14px;
+  margin-bottom: -1px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--muted-ink);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+/* Reserve the bold width so hover/active never shifts the row. */
+.work-tab::after {
+  content: attr(data-label);
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  font-weight: 700;
+}
+
+.work-tab:hover,
+.work-tab:focus-visible {
+  color: var(--ink);
+}
+
+.work-tab:active {
+  transform: translateY(1px);
+}
+
+.work-tab.is-active {
+  color: var(--ink);
+  font-weight: 700;
+  border-bottom-color: var(--ink);
+}
+
+/* Sub-project pills (Learning Design / Product Design) */
+.work-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.work-pills[hidden] {
+  display: none;
+}
+
+.work-pill {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 999px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(47, 47, 48, 0.08);
+  font-size: 0.92rem;
+  color: var(--ink-faint);
+  text-decoration: none;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.work-pill:hover,
+.work-pill:focus-visible {
+  color: var(--ink);
+  box-shadow: 0 3px 10px rgba(47, 47, 48, 0.14);
+}
+
+.work-pill:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 3px rgba(47, 47, 48, 0.1);
+}
+
+.work-pill--soon {
+  cursor: default;
+  color: var(--muted-ink);
+  box-shadow: none;
+  border: 1.3px dashed rgba(118, 132, 130, 0.4);
+}
+
+.work-pill--soon:hover,
+.work-pill--soon:focus-visible {
+  color: var(--muted-ink);
+  box-shadow: none;
+}
+
+/* Quote */
+.work-quote {
+  margin: clamp(48px, 7vh, 80px) 0 0;
+  max-width: 760px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  line-height: 1.55;
+  color: var(--ink-faint);
+}
+
+.work-quote-note {
+  margin: 12px 0 0;
+  max-width: 640px;
+  font-size: 0.85rem;
+  color: var(--muted-ink);
+}
+
+.work-quote-note[hidden] {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .work-page-header {
+    align-items: flex-start;
+  }
+
+  .work-page-nav ul {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
