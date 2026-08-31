@@ -31,7 +31,7 @@
       quote: "The products I've designed and shipped through my professional practice.",
       note: '',
       pills: [
-        { label: 'Philips', href: null },
+        { label: 'Philips', href: 'philips.html' },
         { label: 'Samsung', href: null },
         { label: 'Aurigo', href: null },
         { label: 'Itilite', href: null },
