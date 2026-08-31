@@ -32,8 +32,9 @@
 
     <div class="project-tabs" role="tablist" aria-label="Philips projects">
       <button class="project-tab is-active" type="button" data-project="tabular-trend" data-label="Tabular Trend" role="tab" aria-selected="true">Tabular Trend</button>
+      <button class="project-tab" type="button" data-project="histogram" data-label="Histogram" role="tab" aria-selected="false">Histogram</button>
       <button class="project-tab" type="button" data-project="icon-design" data-label="Icon Design" role="tab" aria-selected="false">Icon Design</button>
-      <button class="project-tab" type="button" data-project="electrode-guide" data-label="Electrode Placement Guide" role="tab" aria-selected="false">Electrode Placement Guide</button>
+      <button class="project-tab" type="button" data-project="guide-illustrations" data-label="Guide Illustrations" role="tab" aria-selected="false">Guide Illustrations</button>
     </div>
 
     <hr class="case-divider" />
@@ -88,33 +89,199 @@
         </div>
         <p class="pd-stat-text">The redesign addressed four key issues: application complexity, lack of customisation, unmet specialised information needs, and accessibility — through prioritised controls, grouped vitals, histogram views, and a dark UI.</p>
       </div>
+
+      <section class="case-testing pd-reflection">
+        <div class="pd-reflection-inner">
+          <p class="pd-reflection-heading">Design adaptation gains momentum when rooted in familiarity</p>
+          <p class="pd-reflection-text">Talking with the clinical team made it clear: change needs to build on what's familiar, not replace it. With a monitor nurses rely on constantly, the goal wasn't reinvention — it was refining what worked while keeping the learning curve near zero.</p>
+        </div>
+      </section>
     </section>
 
-    <!-- Icon Design (placeholder) -->
-    <section class="pd-panel" id="panel-icon-design" hidden>
-      <div class="pd-image-placeholder" style="aspect-ratio: 21/9; margin-top: 48px;">Icon Design — coming soon</div>
-    </section>
+    <!-- Histogram -->
+    <section class="pd-panel" id="panel-histogram" hidden>
 
-    <!-- Electrode Placement Guide (placeholder) -->
-    <section class="pd-panel" id="panel-electrode-guide" hidden>
-      <div class="pd-image-placeholder" style="aspect-ratio: 21/9; margin-top: 48px;">Electrode Placement Guide — coming soon</div>
-    </section>
-
-    <section class="case-testing pd-reflection">
-      <div class="pd-reflection-inner">
-        <p class="pd-reflection-heading">Design adaptation gains momentum when rooted in familiarity</p>
-        <p class="pd-reflection-text">Talking with the clinical team made it clear: change needs to build on what's familiar, not replace it. With a monitor nurses rely on constantly, the goal wasn't reinvention — it was refining what worked while keeping the learning curve near zero.</p>
+      <div class="case-meta pd-meta">
+        <div class="case-meta-col">
+          <p class="case-meta-label">My Role</p>
+          <p class="case-meta-value">UX &amp; visual design</p>
+        </div>
+        <div class="case-meta-col">
+          <p class="case-meta-label">Team</p>
+          <p class="case-meta-value">Experience Director, R&amp;D Solution Product Manager, Software Development Engineer, Product Manager Clinical Workflows</p>
+        </div>
+        <div class="case-meta-col">
+          <p class="case-meta-label">Focus</p>
+          <p class="case-meta-value">Redesigning histogram target-range visualisation</p>
+        </div>
       </div>
+
+      <hr class="case-divider" />
+
+      <h2 class="pd-project-title">Histogram <span class="pd-project-title-year">[2022–2023]</span></h2>
+      <p class="pd-project-subtitle">Improving how clinicians read patient data distribution in PIC iX</p>
+
+      <div class="case-split pd-intro">
+        <p class="pd-intro-text">Histograms are a feature within PIC iX and IntelliVue (Philips' patient monitor) showing how a patient's vitals — like SpO2 — have distributed over time, helping clinicians see how long a patient stayed within a target range and whether treatment is working.</p>
+        <div class="pd-intro-image-wrap">
+          <div class="pd-image-placeholder" style="aspect-ratio: 16/10;">Image coming soon<br />(full monitor screen, old design)</div>
+        </div>
+      </div>
+      <p class="pd-compare-caption">Old design — histogram embedded in the full monitor screen, with target range shown only as a highlighted column on the left</p>
+
+      <p class="pd-problem"><strong>Problem:</strong> The most critical piece — the target range setting — was the hardest part to understand. Clinicians struggled to read how much time a patient spent within, above, or below their target range at a glance.</p>
+
+      <div class="case-split pd-intro">
+        <div class="pd-intro-text">
+          <h3 class="pd-role-heading">My role</h3>
+          <p class="pd-role-text">I worked with the team to test different visual approaches for the target range. One finding shaped the whole redesign: placing bars from bottom to top, rather than left to right, made the data distribution far easier to read without needing to check the axis labels.</p>
+        </div>
+        <div style="flex: 1.6; min-width: 280px; display: flex; gap: 20px;">
+          <div class="pd-image-placeholder" style="aspect-ratio: 3/4;">Image coming soon<br />(old design, close-up)</div>
+          <div class="pd-image-placeholder" style="aspect-ratio: 3/4;">Image coming soon<br />(new design, percentage breakdown)</div>
+        </div>
+      </div>
+      <p class="pd-compare-caption">Old design (left) — target range shown as a highlighted column, hard to parse at a glance. New design (right) — clear percentage breakdown (below/within/above target) with an interactive range selector.</p>
+
+      <h3 class="pd-role-heading" style="margin-top: clamp(32px, 5vh, 48px);">Outcome</h3>
+      <p class="pd-role-text">Tested with 10 clinical team members — most understood the target range immediately in the new design. Settings integration remains an area for further refinement.</p>
+    </section>
+
+    <!-- Icon Design -->
+    <section class="pd-panel" id="panel-icon-design" hidden>
+
+      <div class="case-meta pd-meta">
+        <div class="case-meta-col">
+          <p class="case-meta-label">My Role</p>
+          <p class="case-meta-value">Visual design</p>
+        </div>
+        <div class="case-meta-col">
+          <p class="case-meta-label">Team</p>
+          <p class="case-meta-value">UX Designer, Art Director Icons, Design Technologist</p>
+        </div>
+        <div class="case-meta-col">
+          <p class="case-meta-label">Focus</p>
+          <p class="case-meta-value">New icon style across 5,000+ assets</p>
+        </div>
+      </div>
+
+      <hr class="case-divider" />
+
+      <h2 class="pd-project-title">Icon Design <span class="pd-project-title-year">[2024]</span></h2>
+      <p class="pd-project-subtitle">Crafting a new icon style across Philips healthcare products</p>
+
+      <div class="case-split pd-intro">
+        <p class="pd-intro-text">Philips healthcare uses thousands of icons to simplify complex clinical information. With around 5,000+ icons across the system, updating the style was a significant undertaking — but existing filled icons were causing visual clutter, poor contrast, and inconsistency across screen sizes, especially in dense clinical interfaces.</p>
+        <div class="pd-intro-image-wrap">
+          <div class="pd-image-placeholder" style="aspect-ratio: 4/3;">Image coming soon<br />(Old / Current / New style grid)</div>
+        </div>
+      </div>
+      <p class="pd-compare-caption">Old and current filled icons vs. the new linear style — thinner lines, open shapes, and higher contrast against dark backgrounds.</p>
+
+      <hr class="case-divider" />
+
+      <h3 class="pd-role-heading">My role</h3>
+      <p class="pd-role-text">I contributed to the new icon style — designing individual icons within the updated linear system and helping shape guidelines for consistency across the library.</p>
+
+      <div class="pd-compare-grid">
+        <div>
+          <div class="pd-image-placeholder" style="aspect-ratio: 4/3;">Image coming soon<br />(icon set sample)</div>
+          <p class="pd-compare-caption">A sample of the new linear icon set.</p>
+        </div>
+        <div>
+          <div class="pd-image-placeholder" style="aspect-ratio: 4/3;">Image coming soon<br />(grid system)</div>
+          <p class="pd-compare-caption">Icons are built on a shared grid system for consistent sizing and alignment across the full library.</p>
+        </div>
+      </div>
+
+      <section class="case-testing pd-reflection">
+        <div class="pd-reflection-inner">
+          <p class="pd-reflection-heading">Design with empathy, precision, and impact</p>
+          <p class="pd-reflection-text">Designing the CPR icon taught me this directly. My first version showed the procedure literally — but in an ICU, where patients and families see the screen, that could cause panic. The version we shipped uses an abstract symbol clinicians recognize, without alarming the people beside the bed.</p>
+          <div class="pd-compare-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 24px;">
+            <div>
+              <div class="pd-image-placeholder" style="aspect-ratio: 1/1;">Image coming soon</div>
+              <p class="pd-compare-caption">Design proposed for CPR</p>
+            </div>
+            <div>
+              <div class="pd-image-placeholder" style="aspect-ratio: 1/1;">Image coming soon</div>
+              <p class="pd-compare-caption">Design used for CPR</p>
+            </div>
+            <div>
+              <div class="pd-image-placeholder" style="aspect-ratio: 1/1;">Image coming soon</div>
+              <p class="pd-compare-caption">Design used for CPR</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Guide Illustrations -->
+    <section class="pd-panel" id="panel-guide-illustrations" hidden>
+
+      <div class="case-meta pd-meta">
+        <div class="case-meta-col">
+          <p class="case-meta-label">My Role</p>
+          <p class="case-meta-value">Visual design</p>
+        </div>
+        <div class="case-meta-col">
+          <p class="case-meta-label">Team</p>
+          <p class="case-meta-value">Solo, reporting to the Product Head</p>
+        </div>
+        <div class="case-meta-col">
+          <p class="case-meta-label">Focus</p>
+          <p class="case-meta-value">Adapting device-setup illustrations to Philips' visual guidelines</p>
+        </div>
+      </div>
+
+      <hr class="case-divider" />
+
+      <h2 class="pd-project-title">Patient Guide Illustrations <span class="pd-project-title-year">[BioTel, 2023]</span></h2>
+      <p class="pd-project-subtitle">Adapting device-setup illustrations to Philips' visual guidelines</p>
+
+      <div class="case-split pd-intro">
+        <p class="pd-intro-text">BioTel's app walks patients through setting up and troubleshooting their cardiac monitor at home — replacing electrodes, charging the device, checking connections — through illustrated step-by-step screens. I was brought on to bring these illustrations in line with Philips' visual design guidelines, working solo and reporting directly to the Product Head.</p>
+        <div class="pd-intro-image-wrap">
+          <div class="pd-image-placeholder" style="aspect-ratio: 4/3;">Image coming soon<br />(MCOT device + app photo)</div>
+        </div>
+      </div>
+      <p class="pd-compare-caption">MCOT — BioTel's wearable cardiac monitor, paired with the BioTel Heart app patients use at home.</p>
+
+      <hr class="case-divider" />
+
+      <h3 class="pd-role-heading">My role</h3>
+      <p class="pd-role-text">Working through the illustrations, I found that showing a solid hand over the electrode patch hid the product detail underneath — something patients actually need to see clearly to complete the step correctly. I made the hand translucent instead, so the instruction stays clear without sacrificing product visibility.</p>
+
+      <div class="pd-compare-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="pd-image-placeholder" style="aspect-ratio: 3/4;">Image coming soon<br />(original app illustration)</div>
+        <div class="pd-image-placeholder" style="aspect-ratio: 3/4;">Image coming soon<br />(iteration 1)</div>
+        <div class="pd-image-placeholder" style="aspect-ratio: 3/4;">Image coming soon<br />(iteration 2)</div>
+      </div>
+      <p class="pd-compare-caption">Original app illustration (left) and two of my iterations exploring neutral body color. In an earlier draft, the hand fully covered the electrode — I made it translucent in both versions here, so the detail stays visible while pressing.</p>
+
+      <div class="pd-compare-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 32px;">
+        <div class="pd-image-placeholder" style="aspect-ratio: 3/4;">Image coming soon<br />(electrodes disconnected)</div>
+        <div class="pd-image-placeholder" style="aspect-ratio: 3/4;">Image coming soon<br />(iteration 1)</div>
+        <div class="pd-image-placeholder" style="aspect-ratio: 3/4;">Image coming soon<br />(iteration 2)</div>
+      </div>
+      <p class="pd-compare-caption">The same color exploration applied consistently across the disconnected-electrode screen.</p>
+
+      <section class="case-testing pd-reflection">
+        <div class="pd-reflection-inner">
+          <p class="pd-reflection-heading">An open question, left unresolved</p>
+          <p class="pd-reflection-text">One open question we never resolved: moving away from a specific skin tone (as in the original) toward a neutral body color raised its own problem — a teammate felt the blue option read as unwell, even "poisoned," rather than neutral. We explored an alternative grey tone but hadn't settled on a direction before the project was paused.</p>
+        </div>
+      </section>
     </section>
 
     <div class="pd-footer-nav">
-      <button class="pd-next-link" id="pd-next-link" type="button">
-        <span class="back-link-text" id="pd-next-label">Next</span>
+      <button class="back-link pd-next-link" id="pd-next-link" type="button">
         <span class="back-link-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M14 6l-6 6 6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </span>
+        <span class="back-link-text" data-text="Next">Next</span>
       </button>
 
       <a href="work.html" class="back-link">

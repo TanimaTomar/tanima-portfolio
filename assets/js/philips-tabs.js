@@ -1,30 +1,25 @@
 /**
- * Philips project sub-tabs (Tabular Trend / Icon Design / Electrode
- * Placement Guide). All three live on this one page as panels; the
- * tabs and the Next button both just show/hide the right panel --
- * no navigation involved.
+ * Philips project sub-tabs (Tabular Trend / Histogram / Icon Design /
+ * Guide Illustrations). All four live on this one page as panels;
+ * the tabs and the Next button both just show/hide the right panel --
+ * no navigation involved. The Next button always reads "Next" (never
+ * the upcoming project's name) and just cycles to whichever panel
+ * comes after the current one.
  */
 (function () {
   'use strict';
 
-  var projects = [
-    { key: 'tabular-trend', label: 'Tabular Trend' },
-    { key: 'icon-design', label: 'Icon Design' },
-    { key: 'electrode-guide', label: 'Electrode Placement Guide' },
-  ];
+  var projectKeys = ['tabular-trend', 'histogram', 'icon-design', 'guide-illustrations'];
 
   var tabs = document.querySelectorAll('.project-tab[data-project]');
   var panels = document.querySelectorAll('.pd-panel');
   var nextLink = document.getElementById('pd-next-link');
-  var nextLabel = document.getElementById('pd-next-label');
 
   if (!tabs.length || !panels.length) return;
 
   function indexOf(key) {
-    for (var i = 0; i < projects.length; i++) {
-      if (projects[i].key === key) return i;
-    }
-    return 0;
+    var i = projectKeys.indexOf(key);
+    return i === -1 ? 0 : i;
   }
 
   function selectProject(key, opts) {
@@ -38,9 +33,8 @@
       panel.hidden = panel.id !== 'panel-' + key;
     });
 
-    var nextIndex = (indexOf(key) + 1) % projects.length;
-    if (nextLabel) nextLabel.textContent = projects[nextIndex].label;
-    if (nextLink) nextLink.dataset.target = projects[nextIndex].key;
+    var nextIndex = (indexOf(key) + 1) % projectKeys.length;
+    if (nextLink) nextLink.dataset.target = projectKeys[nextIndex];
 
     if (!opts || opts.scroll !== false) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
