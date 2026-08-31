@@ -32,6 +32,9 @@
 
   /* Cubism Through Shadows */
   --warning-ink: #c1502e;
+
+  /* Product design case studies (Philips, etc.) */
+  --pd-accent: #5698b9;
 }
 
 /* ---------------------------------------------------
@@ -2020,13 +2023,14 @@ ul {
 .project-tab {
   background: none;
   border: none;
-  padding: 0;
+  border-bottom: 2px solid transparent;
+  padding: 0 0 6px;
   font-family: var(--font-sans);
   font-size: 0.98rem;
   color: var(--ink-faint);
   cursor: pointer;
   position: relative;
-  transition: color 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .project-tab::after {
@@ -2040,12 +2044,14 @@ ul {
 
 .project-tab:hover,
 .project-tab:focus-visible {
-  color: var(--ink);
+  color: var(--pd-accent);
+  font-weight: 700;
 }
 
 .project-tab.is-active {
-  color: var(--ink);
+  color: var(--pd-accent);
   font-weight: 700;
+  border-bottom-color: var(--pd-accent);
 }
 
 .pd-meta {
@@ -2155,13 +2161,11 @@ ul {
   max-width: 280px;
 }
 
-.pd-stat-number {
-  margin: 0;
-  font-family: var(--font-sans);
-  font-weight: 800;
-  font-size: clamp(3.2rem, 7vw, 5rem);
-  line-height: 1;
-  color: var(--stat-navy);
+.pd-stat-image {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  height: auto;
 }
 
 .pd-stat-desc {
@@ -2218,7 +2222,7 @@ ul {
   height: 100%;
 }
 
-/* Footer: up-next project list + Next / Work links */
+/* Footer: Next / Work links */
 .pd-footer-nav {
   display: flex;
   flex-direction: column;
@@ -2226,29 +2230,6 @@ ul {
   gap: 20px;
   margin-top: clamp(48px, 7vh, 80px);
   padding-bottom: clamp(40px, 6vh, 64px);
-}
-
-.pd-upnext {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
-}
-
-.pd-upnext button {
-  background: none;
-  border: none;
-  padding: 0;
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  color: var(--ink-faint);
-  cursor: pointer;
-  transition: color 0.15s ease;
-}
-
-.pd-upnext button:hover,
-.pd-upnext button:focus-visible {
-  color: var(--ink);
 }
 
 .pd-next-link {
@@ -2284,8 +2265,7 @@ ul {
     grid-template-columns: 1fr;
   }
 
-  .pd-footer-nav,
-  .pd-upnext {
+  .pd-footer-nav {
     align-items: flex-start;
   }
 }
