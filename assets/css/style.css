@@ -1888,6 +1888,7 @@ ul {
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(47, 47, 48, 0.08);
   font-size: 0.92rem;
+  font-weight: 400;
   color: var(--ink-faint);
   text-decoration: none;
   cursor: pointer;
@@ -1896,7 +1897,8 @@ ul {
 
 .work-pill:hover,
 .work-pill:focus-visible {
-  color: var(--ink);
+  color: #000000;
+  font-weight: 600;
   box-shadow: 0 3px 10px rgba(47, 47, 48, 0.14);
 }
 
@@ -1914,7 +1916,8 @@ ul {
 
 .work-pill--soon:hover,
 .work-pill--soon:focus-visible {
-  color: var(--muted-ink);
+  color: #000000;
+  font-weight: 600;
   box-shadow: none;
 }
 
@@ -2008,8 +2011,8 @@ ul {
 
 .company-tab--soon:hover,
 .company-tab--soon:focus-visible {
-  border-color: rgba(118, 132, 130, 0.35);
-  color: var(--ink-faint);
+  color: #000000;
+  font-weight: 600;
 }
 
 /* Project sub-tabs within a company */
@@ -2224,13 +2227,26 @@ ul {
 }
 
 /* Footer: Next / Work links */
+/* Grid instead of a flex column so the Next/Work icons share one
+   column and line up, while each text label stays right-aligned in
+   its own (wider, shared) column regardless of word length. */
 .pd-footer-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: end;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 20px;
   margin-top: clamp(48px, 7vh, 80px);
   padding-bottom: clamp(40px, 6vh, 64px);
+}
+
+.pd-footer-nav > .back-link {
+  display: contents;
+}
+
+.pd-footer-nav .back-link-text {
+  justify-self: end;
 }
 
 /* .pd-next-link is a <button> reusing .back-link's exact visual
@@ -2264,6 +2280,10 @@ ul {
   }
 
   .pd-footer-nav {
-    align-items: flex-start;
+    justify-content: start;
+  }
+
+  .pd-footer-nav .back-link-text {
+    justify-self: start;
   }
 }
