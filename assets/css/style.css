@@ -1770,10 +1770,10 @@ ul {
 .work-page-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   gap: 24px;
-  padding-top: clamp(64px, 12vh, 140px);
+  padding-top: clamp(100px, 18vh, 200px);
 }
 
 .work-page-title {
