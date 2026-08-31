@@ -32,9 +32,9 @@
       note: '',
       pills: [
         { label: 'Philips', href: 'philips.html' },
-        { label: 'Samsung', href: null },
-        { label: 'Aurigo', href: null },
-        { label: 'Itilite', href: null },
+        { label: 'Samsung', href: 'samsung.html' },
+        { label: 'Aurigo', href: 'aurigo.html' },
+        { label: 'Itilite', href: 'itilite.html' },
       ],
     },
   };
