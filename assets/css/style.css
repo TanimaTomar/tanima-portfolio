@@ -1989,8 +1989,9 @@ ul {
 
 .company-tab:hover,
 .company-tab:focus-visible {
-  border-color: #000000;
-  color: #000000;
+  background-color: var(--ink);
+  border-color: var(--ink);
+  color: var(--bg);
   font-weight: 600;
 }
 
@@ -2011,6 +2012,8 @@ ul {
 
 .company-tab--soon:hover,
 .company-tab--soon:focus-visible {
+  background-color: transparent;
+  border-color: rgba(118, 132, 130, 0.35);
   color: #000000;
   font-weight: 600;
 }

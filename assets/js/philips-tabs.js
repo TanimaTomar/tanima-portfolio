@@ -4,12 +4,15 @@
  * the tabs and the Next button both just show/hide the right panel --
  * no navigation involved. The Next button always reads "Next" (never
  * the upcoming project's name) and just cycles to whichever panel
- * comes after the current one.
+ * comes after the current one. After the last panel (Guide
+ * Illustrations), Next leaves the page entirely and continues the
+ * company chain into Samsung.
  */
 (function () {
   'use strict';
 
   var projectKeys = ['tabular-trend', 'histogram', 'icon-design', 'guide-illustrations'];
+  var NEXT_COMPANY_HREF = 'samsung.html';
 
   var tabs = document.querySelectorAll('.project-tab[data-project]');
   var panels = document.querySelectorAll('.pd-panel');
@@ -33,8 +36,11 @@
       panel.hidden = panel.id !== 'panel-' + key;
     });
 
+    var isLast = indexOf(key) === projectKeys.length - 1;
     var nextIndex = (indexOf(key) + 1) % projectKeys.length;
-    if (nextLink) nextLink.dataset.target = projectKeys[nextIndex];
+    if (nextLink) {
+      nextLink.dataset.target = isLast ? '' : projectKeys[nextIndex];
+    }
 
     if (!opts || opts.scroll !== false) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -49,6 +55,10 @@
 
   if (nextLink) {
     nextLink.addEventListener('click', function () {
+      if (!nextLink.dataset.target) {
+        window.location.href = NEXT_COMPANY_HREF;
+        return;
+      }
       selectProject(nextLink.dataset.target);
     });
   }
