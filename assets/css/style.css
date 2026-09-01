@@ -1790,6 +1790,10 @@ ul {
   color: var(--ink-faint);
 }
 
+.page-nav .footer-label {
+  text-align: right;
+}
+
 .page-nav ul {
   display: flex;
   flex-direction: column;
