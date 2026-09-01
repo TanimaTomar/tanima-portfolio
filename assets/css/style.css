@@ -449,11 +449,9 @@ ul {
 
 .footer-label {
   margin: 0 0 14px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--heading-ink);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--muted-ink);
 }
 
 .about-footer ul {
@@ -1989,9 +1987,7 @@ ul {
 
 .company-tab:hover,
 .company-tab:focus-visible {
-  background-color: var(--ink);
-  border-color: var(--ink);
-  color: var(--bg);
+  color: #000000;
   font-weight: 600;
 }
 
@@ -2012,8 +2008,6 @@ ul {
 
 .company-tab--soon:hover,
 .company-tab--soon:focus-visible {
-  background-color: transparent;
-  border-color: rgba(118, 132, 130, 0.35);
   color: #000000;
   font-weight: 600;
 }
