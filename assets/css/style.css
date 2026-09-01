@@ -12,6 +12,10 @@
   --font-serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
+  /* Site-wide accent, used sparingly (e.g. the Contact email link) to
+     stand out against the otherwise neutral ink palette. */
+  --accent: #3f7fe0;
+
   /* Derived from the Figma layout grid: 6 columns, stretch, 20px
      gutter, 0 margin, on a 1440px frame -> column width 223px.
      Content sits inset by roughly one column on each side. */
@@ -1954,6 +1958,70 @@ ul {
     align-items: center;
     flex-wrap: wrap;
     gap: 16px;
+  }
+}
+
+/* ---------------------------------------------------
+   Contact page
+--------------------------------------------------- */
+.contact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-top: clamp(100px, 18vh, 200px);
+}
+
+.contact-title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--heading-ink);
+}
+
+.contact-email-row {
+  margin: clamp(100px, 16vh, 180px) 0 0;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+}
+
+.contact-email-label {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.contact-email-link {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease, opacity 0.15s ease;
+}
+
+.contact-email-link:hover,
+.contact-email-link:focus-visible {
+  border-color: currentColor;
+}
+
+.contact-note {
+  margin: clamp(40px, 6vh, 64px) 0 0;
+  max-width: 640px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  line-height: 1.55;
+  color: var(--ink-faint);
+}
+
+@media (max-width: 700px) {
+  .contact-header {
+    align-items: flex-start;
   }
 }
 
