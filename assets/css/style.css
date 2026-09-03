@@ -188,8 +188,23 @@ ul {
   color: var(--hero-ink);
 }
 
+.hero-subline {
+  margin: 14px 0 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  line-height: 1.3;
+  color: var(--hero-ink);
+}
+
+.hero-divider {
+  border: none;
+  border-top: 1px solid rgba(118, 132, 130, 0.25);
+  margin: clamp(20px, 3vh, 28px) 0;
+}
+
 .hero-text .credential {
-  margin: clamp(20px, 3vh, 32px) 0 0;
+  margin: 0;
   font-size: 0.98rem;
   color: var(--ink-faint);
   line-height: 1.6;
